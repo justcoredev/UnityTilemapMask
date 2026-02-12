@@ -1,12 +1,22 @@
 # UnityTilemapMask
-Works the same as SpriteMask but is used for tilemaps.
+Works like SpriteMask, but designed specifically for **Tilemaps**.
+
+### Preview
+![alt text](https://github.com/justcoredev/UnityTilemapMask/blob/main/preview.gif?raw=true)
 
 ### How to use
 
-1. Download the TilemapMask folder
-2. Add the `TilemapMask.cs` script to an object that the Tilemap is on and set the `Mask Cell` field to the `FloorMask.prefab`.
-3. Click `Generate Mask` to generate mask for your tilemap.
-4. Set `Mask Interaction` to `Visible Inside Mask` inside all `SpriteRenderers` of your `Sprites`, which should only appear inside the mask.
-5. See the result! :)
+1. Download the [latest version](https://github.com/justcoredev/UnityTilemapMask/releases/tag/2.0).
+2. Copy it into your project's **Assets** folder.
+3. Add the `TilemapMask` component to the `GameObject` that contains your Tilemap.
+4. Press `Generate Mask`.
+5. For any `SpriteRenderer` that should only appear inside the mask, set `Mask Interaction` -> `Visible Inside Mask`.
+6. Done! :)
 
-![alt text](https://github.com/JustAnCore/UnityTilemapMask/blob/main/scr.png?raw=true)
+### Notes: 
+- Make sure your `SpriteRenderers` have a higher `Order in Layer` than the `Tilemap`. Otherwise, they may not appear at all.
+- Whenever you modify the Tilemap, you need to regenerate the mask:
+- - Use the `Generate Mask` button, or
+- - Call `TilemapMask.GenerateMask()` at runtime.
+- If you don't want to think about it, just call it once on game start.
+
