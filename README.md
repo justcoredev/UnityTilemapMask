@@ -1,5 +1,5 @@
 # UnityTilemapMask
-Works like SpriteMask, but designed specifically for **Tilemaps**.
+Works like SpriteMask, but made specifically for **Tilemaps**.
 
 ### Preview
 ![alt text](https://github.com/justcoredev/UnityTilemapMask/blob/main/preview.gif?raw=true)
@@ -19,4 +19,8 @@ Works like SpriteMask, but designed specifically for **Tilemaps**.
 - - Use the `Generate Mask` button, or
 - - Call `TilemapMask.GenerateMask()` at runtime.
 - If you don't want to think about it, just call it once on game start.
+
+### How it works?
+- The component iterates through all tiles, puts individual `SpriteMask` objects on their positions, and copies their sprites to use as masks.
+This approach is simple and works well in most cases. For really large tilemaps, I guess, object pooling or smth like that could be added to improve perfomance. 
 
